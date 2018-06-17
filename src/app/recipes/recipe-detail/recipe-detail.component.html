@@ -1,0 +1,42 @@
+
+<div class="row ">
+  <div class="col-xs-12 space">
+    <h1>{{recIngredientInfo.name}}</h1>
+    <!-- <h1>Name</h1> -->
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 imagespace">
+      <img [src]="recIngredientInfo.imagePath" class="img-responsive">
+    </div>
+  </div>
+  <br>
+<div class="row">
+  <div class="col-xs-12 space">
+    <div class="btn-group" appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle ">Manage Recipe <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a (click)="addIngredientToShoppingList()">Add to Shopping list</a></li>
+        <li><a (click)="editRecipe()">edit recipe</a></li>
+        <!-- routerLink="../../new" [queryParams]="{editMode:true}" -->
+        <li><a (click)="onDelete()">delete recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 space">
+    <h4>Description: </h4>
+    <h6>{{recIngredientInfo.description}}</h6>
+    <!-- <h4>description</h4> -->
+  </div>
+</div>
+<div class="row" >
+  <div class="col-xs-12 space">
+    <h4>Ingredients:</h4>
+    <div *ngFor="let ingredientItem of recIngredientInfo.ingredientlist" >
+        <h6>{{ingredientItem.name}} , {{ingredientItem.amount}}</h6>
+    </div>
+    
+  </div>
+</div>
